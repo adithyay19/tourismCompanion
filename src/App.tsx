@@ -9,20 +9,43 @@ import HomePage from './Routes/HomePage';
 import ChatBot from './Components/ChatBot';
 import Footer from './Components/Footer';
 import Theme from './Theme';
+import { Box, CssBaseline, Divider, PaletteMode, ThemeProvider, createTheme } from '@mui/material';
+import { useState } from 'react';
+import { create } from '@mui/material/styles/createTransitions';
 
-const defaultTheme = 
+const defaultTheme = createTheme({});
+
+interface ToggleCustomThemeProps {
+  showCustomTheme: Boolean;
+  toggleCustomTheme: () => void;
+}
 
 function App() {
+
+  const [mode, setMode] = useState<PaletteMode>('dark');
+  const [showCustomTheme, setShowCustomTheme] = useState(true);
+  const appTheme = createTheme(Theme(mode));
+
+  const toggleColorMode = () => {
+    setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  }
+
   return (
     <>
-      <NavBar />
-      
-      <ChatBot/>
-      
-      <HomePage />
+      <ThemeProvider theme={showCustomTheme ? appTheme : defaultTheme}>
+        <CssBaseline />
+        <NavBar/>
+        {/* <Hero/> */}
+        <Box sx={{ bgcolor: 'background.default'}}>
+          <HomePage/>
+          <Divider/>
+          <ChatBot/>
+          <Divider/>
+          <Footer/>
 
-      <Footer/>
+        </Box>
 
+      </ThemeProvider>
     </>
   )
 }

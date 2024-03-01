@@ -42,7 +42,7 @@ function ChatBot() {
     return(
         <>
             <Button variant="text" onClick={handleClickOpen}>
-                Open chatbot
+                Chatbot
             </Button>
             <BootstrapDialog
             TransitionComponent={Transition}
@@ -69,11 +69,6 @@ function ChatBot() {
                 <DialogContent dividers>
                     <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
                 </DialogContent>
-                {/* <DialogActions>
-                    <Button autoFocus onClick={handleClose}>
-                        Save changes
-                    </Button>
-                </DialogActions> */}
             </BootstrapDialog>
         </>
     );
