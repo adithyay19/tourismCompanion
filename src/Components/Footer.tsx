@@ -16,15 +16,15 @@ const logoStyle = {
   height: 'auto',
 };
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="https://mui.com/">Sitemark&nbsp;</Link>
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" mt={1}>
+//       {'Copyright © '}
+//       <Link href="https://mui.com/">Sitemark&nbsp;</Link>
+//       {new Date().getFullYear()}
+//     </Typography>
+//   );
+// }
 
 function Footer() {
   return (
@@ -61,7 +61,7 @@ function Footer() {
                   'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
                 }
                 style={logoStyle}
-                alt="logo of sitemark"
+                alt="logo of ITC"
               />
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
@@ -98,22 +98,19 @@ function Footer() {
           }}
         >
           <Typography variant="body2" fontWeight={600}>
-            Product
+            Companion
           </Typography>
           <Link color="text.secondary" href="#">
-            Features
+            Itenary
           </Link>
           <Link color="text.secondary" href="#">
-            Testimonials
+            Bookings
           </Link>
           <Link color="text.secondary" href="#">
-            Highlights
+            About
           </Link>
           <Link color="text.secondary" href="#">
-            Pricing
-          </Link>
-          <Link color="text.secondary" href="#">
-            FAQs
+            Contact
           </Link>
         </Box>
         <Box
@@ -177,7 +174,6 @@ function Footer() {
           <Link color="text.secondary" href="#">
             Terms of Service
           </Link>
-          <Copyright />
         </div>
         <Stack
           direction="row"

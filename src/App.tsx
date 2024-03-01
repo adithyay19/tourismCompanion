@@ -8,6 +8,9 @@ import NavBar from './NavBar'
 import HomePage from './Routes/HomePage';
 import ChatBot from './Components/ChatBot';
 import Footer from './Components/Footer';
+import Theme from './Theme';
+
+const defaultTheme = 
 
 function App() {
   return (
