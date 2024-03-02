@@ -1,6 +1,6 @@
 // import { createChatBotMessage } from 'react-chatbot-kit';
 // import ActionProvider from "src\Components\ChatBot\ActionProvider.tsx"
-import './App.css'
+// import './App.css'
 import 'react-chatbot-kit/build/main.css'
 
 // import MapPage from './Routes/MapPage'
@@ -11,7 +11,8 @@ import Footer from './Components/Footer';
 import Theme from './Theme';
 import { Box, CssBaseline, Divider, PaletteMode, ThemeProvider, createTheme } from '@mui/material';
 import { useState } from 'react';
-import { create } from '@mui/material/styles/createTransitions';
+import Chatbot from 'react-chatbot-kit';
+// import { create } from '@mui/material/styles/createTransitions';
 
 const defaultTheme = createTheme({});
 
@@ -32,22 +33,21 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={showCustomTheme ? appTheme : defaultTheme}>
+      <ThemeProvider theme={appTheme}>
         <CssBaseline />
-        <NavBar/>
+        {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
         {/* <Hero/> */}
         <Box sx={{ bgcolor: 'background.default'}}>
           <HomePage/>
           <Divider/>
-          <ChatBot/>
-          <Divider/>
           <Footer/>
 
         </Box>
+        <ChatBot/>
 
       </ThemeProvider>
     </>
-  )
+  );
 }
 
 export default App;

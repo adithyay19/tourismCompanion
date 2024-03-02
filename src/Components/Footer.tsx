@@ -56,13 +56,13 @@ function Footer() {
         >
           <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
             <Box sx={{ ml: '-15px' }}>
-              <img
+              {/* <img
                 src={
                   'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
                 }
                 style={logoStyle}
                 alt="logo of ITC"
-              />
+              /> */}
             </Box>
             <Typography variant="body2" fontWeight={600} gutterBottom>
               Newsletter
@@ -165,14 +165,29 @@ function Footer() {
         }}
       >
         <div>
+          <Typography variant="body2" fontWeight={600}>
+            Credits
+          </Typography>
           <Link color="text.secondary" href="#">
-            Privacy Policy
+            Adithya
           </Link>
           <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
             &nbsp;•&nbsp;
           </Typography>
           <Link color="text.secondary" href="#">
-            Terms of Service
+            Aleena
+          </Link>
+          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
+            &nbsp;•&nbsp;
+          </Typography>
+          <Link color="text.secondary" href="#">
+            Aniruddh
+          </Link>
+          <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
+            &nbsp;•&nbsp;
+          </Typography>
+          <Link color="text.secondary" href="#">
+            Gopi Shankar
           </Link>
         </div>
         <Stack
@@ -186,7 +201,7 @@ function Footer() {
         >
           <IconButton
             color="inherit"
-            href="https://github.com/mui"
+            href="https://github.com/adithyay19/tourismCompanion"
             aria-label="GitHub"
             sx={{ alignSelf: 'center' }}
           >
@@ -194,11 +209,11 @@ function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://twitter.com/MaterialUI"
-            aria-label="X"
+            href="https://www.linkedin.com/in/gopi-shankar-s/"
+            aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >
-            <TwitterIcon />
+            <LinkedInIcon />
           </IconButton>
           <IconButton
             color="inherit"

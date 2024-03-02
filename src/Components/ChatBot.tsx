@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle, IconButton, Slide, styled } from "@mui/material";
+import { Box, Dialog, DialogContent, DialogTitle, IconButton, Slide, styled } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import Button from "@mui/material/Button";
 import React from "react";
@@ -40,8 +40,22 @@ function ChatBot() {
 
 
     return(
-        <>
-            <Button variant="text" onClick={handleClickOpen}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "end",
+            position: "fixed",
+            right: 24,
+            bottom: 24,
+            width: '100dvw',
+          }}
+        >
+            <Button 
+              variant="text"
+              onClick={handleClickOpen}
+              fullWidth={true}
+            >
                 Chatbot
             </Button>
             <BootstrapDialog
@@ -70,7 +84,7 @@ function ChatBot() {
                     <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
                 </DialogContent>
             </BootstrapDialog>
-        </>
+        </Box>
     );
 }
 
