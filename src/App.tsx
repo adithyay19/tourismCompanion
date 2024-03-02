@@ -38,6 +38,7 @@ function App() {
         {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
         {/* <Hero/> */}
         <Box sx={{ bgcolor: 'background.default'}}>
+          {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
           <HomePage/>
           <Divider/>
           <Footer/>

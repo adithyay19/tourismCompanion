@@ -1,9 +1,17 @@
+import { Divider } from "@mui/material";
+import About from "../Components/HomePage/About";
+import Destinations from "../Components/HomePage/Destinations";
+import WelcomeCard from "../Components/HomePage/WelcomeCard";
 
 
 function HomePage() {
     return(
         <>
-            <h1>Main Page</h1>
+            <WelcomeCard />
+            <Divider/>
+            <Destinations />
+            <Divider/>
+            <About />
         </>
     );
 }
