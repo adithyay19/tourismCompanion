@@ -1,6 +1,3 @@
-// import { createChatBotMessage } from 'react-chatbot-kit';
-// import ActionProvider from "src\Components\ChatBot\ActionProvider.tsx"
-// import './App.css'
 import 'react-chatbot-kit/build/main.css'
 
 // import MapPage from './Routes/MapPage'
@@ -14,7 +11,6 @@ import { useState } from 'react';
 import Chatbot from 'react-chatbot-kit';
 // import { create } from '@mui/material/styles/createTransitions';
 
-const defaultTheme = createTheme({});
 
 interface ToggleCustomThemeProps {
   showCustomTheme: Boolean;
@@ -26,6 +22,7 @@ function App() {
   const [mode, setMode] = useState<PaletteMode>('dark');
   const [showCustomTheme, setShowCustomTheme] = useState(true);
   const appTheme = createTheme(Theme(mode));
+  const defaultTheme = createTheme({palette: { mode }});
 
   const toggleColorMode = () => {
     setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));

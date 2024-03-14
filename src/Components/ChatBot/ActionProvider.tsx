@@ -1,5 +1,3 @@
-import MessageParser from "./MessageParser";
-import config from "./config";
 
 class ActionProvider {
     createChatBotMessage: any;

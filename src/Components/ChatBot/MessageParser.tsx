@@ -1,5 +1,3 @@
-import ActionProvider from "./ActionProvider";
-import config from "./config";
 
 class MessageParser {
     actionProvider: any;
