@@ -1,5 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import "E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg";
+import axios from "axios";
 
 
 function WelcomeCard () {

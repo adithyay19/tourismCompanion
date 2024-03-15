@@ -1,4 +1,4 @@
-import { Box, Card, CardMedia, Container } from "@mui/material";
+import { Box, Card, Container } from "@mui/material";
 
 
 function Destinations() {

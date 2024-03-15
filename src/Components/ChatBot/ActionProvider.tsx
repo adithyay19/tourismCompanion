@@ -1,3 +1,17 @@
+import axios from "axios";
+
+let answer = "";
+
+const fetchData = async () => {
+    try {
+      const response = await axios.get('http://your-flask-api-endpoint.com/data');
+      console.log(response.data);
+      answer = response.data;
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
 
 class ActionProvider {
     createChatBotMessage: any;
@@ -12,7 +26,8 @@ class ActionProvider {
     }
 
     greetFunc() {
-        const botMessage = this.createChatBotMessage("What can I do for you?");
+        fetchData();
+        const botMessage = this.createChatBotMessage(answer);
         this.updateChatbotState(botMessage);
     }
 
