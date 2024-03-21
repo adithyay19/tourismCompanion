@@ -1,5 +1,6 @@
-import { Box, Dialog, DialogContent, DialogTitle, IconButton, Slide, styled } from "@mui/material";
+import { Box, Dialog, DialogContent, DialogTitle, Fab, IconButton, Slide, styled } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
+import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import Button from "@mui/material/Button";
 import React from "react";
 import Chatbot from "react-chatbot-kit";
@@ -51,13 +52,9 @@ function ChatBot() {
             width: '100dvw',
           }}
         >
-            <Button 
-              variant="text"
-              onClick={handleClickOpen}
-              fullWidth={true}
-            >
-                Chatbot
-            </Button>
+            <Fab color="primary" aria-label="Open ChatBot" onClick={handleClickOpen}>
+              <ForumRoundedIcon/>
+            </Fab>
             <BootstrapDialog
             TransitionComponent={Transition}
             onClose={handleClose}
@@ -65,7 +62,7 @@ function ChatBot() {
             open={open}
             
             >
-                <DialogTitle sx={{ m: 0, p: 2 }} id="customized-dialog-title">
+                <DialogTitle sx={{ m: 0, p: 1 }} id="customized-dialog-title">
                     Kerala - ITC
                 </DialogTitle>
                 <IconButton

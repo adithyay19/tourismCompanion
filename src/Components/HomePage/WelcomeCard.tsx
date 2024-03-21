@@ -12,7 +12,13 @@ function WelcomeCard () {
                 pb: { xs: 8, sm: 16 },
                 color: 'white',
                 bgcolor: '#06090A',
-                backgroundImage: 'E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg',
+                backgroundImage: "url('src/images/Cover_Img.jpg')",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '100%',
+                height: '100%',
+
                 
             }}
         >
@@ -22,14 +28,22 @@ function WelcomeCard () {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    // backgroundImage: 'E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg',
                 }}
 
             >
                 <Box
                     sx={{
-                        width: { sm: '100%', md: '60%' },
-                        textAlign: { sm: 'left', md: 'center' },
+                        width: { sm: '100%', md: '100%' },
+                        height: { sm: '100%', md: '100%' },
+                        textAlign: { sm: 'center', md: 'center' },
+                        // backgroundImage: "url('src/images/Cover_Img.jpg')",
+                        // backgroundRepeat: "no-repeat",
+                        // backgroundSize: 'cover',
+                        // backgroundPosition: 'center',
+                        // width: '100%',
+                        // height: '100%',
+                        alignItems: "center",
+                        justifyContent: "center",
                     }}
                 >
                     <Typography component='h2' variant='h4'>

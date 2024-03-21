@@ -32,7 +32,7 @@ function App() {
     <>
       <ThemeProvider theme={appTheme}>
         <CssBaseline />
-        {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
+        <NavBar />
         {/* <Hero/> */}
         <Box sx={{ bgcolor: 'background.default'}}>
           {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
