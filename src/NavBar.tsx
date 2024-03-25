@@ -324,6 +324,7 @@ interface NavBarProps {
         <Toolbar 
           variant='regular'
           sx={{
+            top: 10,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',

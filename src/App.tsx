@@ -34,6 +34,7 @@ function App() {
         <CssBaseline />
         <NavBar />
         {/* <Hero/> */}
+        {/* <HomePage/> */}
         <Box sx={{ bgcolor: 'background.default'}}>
           {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
           <HomePage/>

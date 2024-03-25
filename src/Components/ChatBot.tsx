@@ -1,8 +1,8 @@
-import { Box, Dialog, DialogContent, DialogTitle, Fab, IconButton, Slide, styled } from "@mui/material";
+import { Box, Collapse, Dialog, DialogContent, DialogTitle, Fab, Grow, IconButton, Slide, styled } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import ForumRoundedIcon from '@mui/icons-material/ForumRounded';
 import Button from "@mui/material/Button";
-import React from "react";
+import React, { useState } from "react";
 import Chatbot from "react-chatbot-kit";
 import 'react-chatbot-kit/build/main.css'
 import ActionProvider from "./ChatBot/ActionProvider";
@@ -10,14 +10,14 @@ import MessageParser from "./ChatBot/MessageParser";
 import config from "./ChatBot/config";
 import { TransitionProps } from "@mui/material/transitions";
 
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-    '& .MuiDialogContent-root': {
-      padding: theme.spacing(2),
-    },
-    '& .MuiDialogActions-root': {
-      padding: theme.spacing(1),
-    },
-  }));
+// const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+//     '& .MuiDialogContent-root': {
+//       padding: theme.spacing(2),
+//     },
+//     '& .MuiDialogActions-root': {
+//       padding: theme.spacing(1),
+//     },
+//   }));
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & {
@@ -25,12 +25,12 @@ const Transition = React.forwardRef(function Transition(
     },
     ref: React.Ref<unknown>,
   ) {
-    return <Slide direction="up" ref={ref} {...props} />;
+    return <Slide direction="up"  ref={ref} {...props} />;
   });  
 
 function ChatBot() {
 
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -55,11 +55,17 @@ function ChatBot() {
             <Fab color="primary" aria-label="Open ChatBot" onClick={handleClickOpen}>
               <ForumRoundedIcon/>
             </Fab>
-            <BootstrapDialog
+            <Dialog
             TransitionComponent={Transition}
             onClose={handleClose}
             aria-labelledby="customized-dialog-title"
             open={open}
+            sx={{
+              position: "fixed",
+              left: '72%',
+              top: '15%',
+              // width:"175%"
+            }}
             
             >
                 <DialogTitle sx={{ m: 0, p: 1 }} id="customized-dialog-title">
@@ -80,7 +86,7 @@ function ChatBot() {
                 <DialogContent dividers>
                     <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}/>
                 </DialogContent>
-            </BootstrapDialog>
+            </Dialog>
         </Box>
     );
 }
