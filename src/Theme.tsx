@@ -72,6 +72,16 @@ export const green = {
   900: '#021D02',
 };
 
+export const white = {
+  50: '#FFFFFF',
+  100: '#F8F8FF',
+  200: '#F5F5F5',
+  300: '#FEFEFA',
+  400: '#F5FEFD',
+  500: '#FDFCFA',
+  600: '#F8FBF8',
+}
+
 const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
@@ -149,7 +159,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
     },
   },
   typography: {
-    fontFamily: ['"Inter", "sans-serif"'].join(','),
+    fontFamily: ['"Monospace", sans-serif'].join(','),
     h1: {
       fontSize: 60,
       fontWeight: 600,
@@ -184,7 +194,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       fontSize: 16,
     },
     body1: {
-      fontWeight: 400,
+      fontWeight: 500,
       fontSize: 15,
     },
     body2: {
@@ -304,6 +314,7 @@ export default function Theme(mode: PaletteMode): ThemeOptions {
             boxShadow: 'none',
             borderRadius: '10px',
             textTransform: 'none',
+            color: brand[50],
             '&:active': {
               transform: 'scale(0.98)',
             },
@@ -322,10 +333,22 @@ export default function Theme(mode: PaletteMode): ThemeOptions {
                 outline: `1px solid ${brand[700]}`,
                 '&:hover': {
                   background: brand[400],
-                  backgroundImage: 'none',
+                  backgroundImage: 'none',                
                   boxShadow: `0 0 0 1px  ${alpha(brand[300], 0.5)}`,
                 },
               }),
+            ...(ownerState.variant === 'contained' && 
+              ownerState.color === 'secondary' && {
+                color: gray[900],
+                backgroundColor: white[50],
+                boxShadow: `inset 0 1px ${alpha(white[300], 0.4)}`,
+                outline: `1px solid ${white[500]}`,
+                backgroundImage: `linear-gradient(to bottom, ${white[400]}, ${white[600]})`,
+                '&:hover': {
+                  background: white[200],
+                  boxShadow: `0 0 5px ${alpha(white[100], 0.6)}, 0 0 25px ${alpha(white[100], 0.6)}, 0 0 50px ${alpha(white[100], 0.6)}, 0 0 200px ${alpha(white[100], 0.6)}`,
+                }
+              }),  
             ...(ownerState.variant === 'outlined' && {
               backgroundColor: alpha(brand[300], 0.1),
               borderColor: brand[300],
@@ -338,7 +361,7 @@ export default function Theme(mode: PaletteMode): ThemeOptions {
             ...(ownerState.variant === 'text' && {
               color: brand[500],
               '&:hover': {
-                backgroundColor: alpha(brand[300], 0.3),
+                // backgroundColor: alpha(brand[300], 0.3),
                 borderColor: brand[200],
               },
             }),
@@ -355,7 +378,7 @@ export default function Theme(mode: PaletteMode): ThemeOptions {
               ...(ownerState.variant === 'text' && {
                 color: brand[300],
                 '&:hover': {
-                  backgroundColor: alpha(brand[600], 0.3),
+                  backgroundColor: 'transparent',
                   borderColor: brand[700],
                 },
               }),
@@ -628,6 +651,13 @@ export default function Theme(mode: PaletteMode): ThemeOptions {
           }),
         },
       },
+      MuiTypography: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            letterSpacing: '0.05rem'
+          })
+        }
+      }
     },
   };
 }

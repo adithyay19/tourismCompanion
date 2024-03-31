@@ -30,12 +30,12 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={appTheme}>
+      <ThemeProvider theme={createTheme(Theme(mode))}>
         <CssBaseline />
         <NavBar />
         {/* <Hero/> */}
         {/* <HomePage/> */}
-        <Box sx={{ bgcolor: 'background.default'}}>
+        <Box sx={{ bgcolor: 'background.default', overflow: 'auto'}}>
           {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
           <HomePage/>
           <Divider/>

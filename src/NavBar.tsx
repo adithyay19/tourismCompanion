@@ -267,7 +267,11 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { PaletteMode } from '@mui/material';
 import { useState } from 'react';
 
-const pages = ['HOME', 'ITINERARY', 'BOOKING', 'ABOUT'];
+const pages = [{name: 'HOME', id: 'home'}, 
+  {name: 'ITINERARY', id: ''}, 
+  {name: 'BOOKING', id: ''}, 
+  {name: 'ABOUT', id: 'about'},
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function NavBar() {
@@ -284,19 +288,19 @@ interface NavBarProps {
     setOpen(newOpen);
   };
 
-  // const scrollToSection = (sectionId: string) => {
-  //   const sectionElement = document.getElementById(sectionId);
-  //   const offset = 128;
-  //   if (sectionElement) {
-  //     const targetScroll = sectionElement.offsetTop - offset;
-  //     sectionElement.scrollIntoView({ behavior: 'smooth' });
-  //     window.scrollTo({
-  //       top: targetScroll,
-  //       behavior: 'smooth',
-  //     });
-  //     setOpen(false);
-  //   }
-  // };
+  const scrollToSection = (sectionId: string) => {
+    const sectionElement = document.getElementById(sectionId);
+    const offset = 128;
+    if (sectionElement) {
+      const targetScroll = sectionElement.offsetTop - offset;
+      sectionElement.scrollIntoView({ behavior: 'smooth' });
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth',
+      });
+      setOpen(false);
+    }
+  };
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -314,8 +318,12 @@ interface NavBarProps {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+  };
 
-
+  const logoStyle = {
+    width: '140px',
+    height: 'auto',
+    cursor: 'pointer',
   };
 
   return (
@@ -330,7 +338,7 @@ interface NavBarProps {
             justifyContent: 'space-between',
             flexShrink: 0,
             borderRadius: '999px',
-            bgcolor: 'rgba(0, 0, 0, 0.4)',
+            bgcolor: 'rgba(0, 0, 0, 0.2)',
               // theme.palette.mode === 'light' ?
               //   'rgba(255, 255, 255, 0.4)' :
               //   'rgba(0, 0, 0, 0.4)',
@@ -338,7 +346,7 @@ interface NavBarProps {
               maxHeight: 40,
               border: '1px solid',
               borderColor: 'divider',
-              boxShadow: '0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)',
+              boxShadow: '0 0 1px rgba(85, 166, 246, 0.5), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.5), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.5)',
     
           }}
         >
@@ -347,7 +355,7 @@ interface NavBarProps {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="#home"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -358,7 +366,7 @@ interface NavBarProps {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            ITC
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -391,13 +399,25 @@ interface NavBarProps {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" color={'cyan'}>{page}</Typography>
+                <MenuItem key={page.name} onClick={() => scrollToSection(page.id)}>
+                  <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+          <img
+                src={
+                  'src/assets/images/Logo.png'
+                }
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  marginRight: '1rem',
+                  // display: { xs: 'flex', md: 'none'},
+                }}
+                alt="logo"
+              />
           <Typography
             variant="h5"
             noWrap
@@ -414,16 +434,16 @@ interface NavBarProps {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            ITC
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems: 'center', justifyContent: 'center' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                key={page.name}
+                onClick={() => scrollToSection(page.id)}
+                sx={{ my: 2, color: 'white', display: 'flex', letterSpacing: '0.15rem', padding: '1rem' }}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
@@ -431,7 +451,7 @@ interface NavBarProps {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Adithya" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Adithya" src="" />
               </IconButton>
             </Tooltip>
             <Menu

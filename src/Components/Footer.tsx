@@ -12,8 +12,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
 
 const logoStyle = {
-  width: '140px',
-  height: 'auto',
+  width: '50px',
+  height: '50px',
+  // right: '500rem',
 };
 
 // function Copyright() {
@@ -54,17 +55,15 @@ function Footer() {
             minWidth: { xs: '100%', sm: '60%' },
           }}
         >
-          <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-            <Box sx={{ ml: '-15px' }}>
-              {/* <img
-                src={
-                  'https://assets-global.website-files.com/61ed56ae9da9fd7e0ef0a967/61f12e6faf73568658154dae_SitemarkDefault.svg'
-                }
+          <Box sx={{ width: { xs: '100%', sm: '85%' } }}>
+            <Box sx={{  }}>
+              <img
+                src={ '/src/assets/images/Logo.png' }
                 style={logoStyle}
                 alt="logo of ITC"
-              /> */}
+              />
             </Box>
-            <Typography variant="body2" fontWeight={600} gutterBottom>
+            <Typography variant="body1" fontWeight={600} gutterBottom>
               Newsletter
             </Typography>
             <Typography variant="body2" color="text.secondary" mb={2}>
@@ -84,7 +83,7 @@ function Footer() {
                   ariaLabel: 'Enter your email address',
                 }}
               />
-              <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
+              <Button variant="contained" color="primary" sx={{ flexShrink: 1 }}>
                 Subscribe
               </Button>
             </Stack>
@@ -100,13 +99,13 @@ function Footer() {
           <Typography variant="body2" fontWeight={600}>
             Companion
           </Typography>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="#home">
             Itenary
           </Link>
           <Link color="text.secondary" href="#">
             Bookings
           </Link>
-          <Link color="text.secondary" href="#">
+          <Link color="text.secondary" href="#about">
             About
           </Link>
           <Link color="text.secondary" href="#">
@@ -165,9 +164,9 @@ function Footer() {
         }}
       >
         <div>
-          <Typography variant="body2" fontWeight={600}>
+          {/* <Typography variant="body1" fontWeight={600}>
             Credits
-          </Typography>
+          </Typography> */}
           <Link color="text.secondary" href="#">
             Adithya
           </Link>
@@ -217,7 +216,7 @@ function Footer() {
           </IconButton>
           <IconButton
             color="inherit"
-            href="https://www.linkedin.com/company/mui/"
+            href=""
             aria-label="LinkedIn"
             sx={{ alignSelf: 'center' }}
           >
