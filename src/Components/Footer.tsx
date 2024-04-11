@@ -92,6 +92,7 @@ function Footer() {
         <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
+            justifyContent: 'space-between',
             flexDirection: 'column',
             gap: 1,
           }}
@@ -112,7 +113,7 @@ function Footer() {
             Contact
           </Link>
         </Box>
-        <Box
+        {/* <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
@@ -131,8 +132,8 @@ function Footer() {
           <Link color="text.secondary" href="#">
             Press
           </Link>
-        </Box>
-        <Box
+        </Box> */}
+        {/* <Box
           sx={{
             display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
@@ -151,7 +152,7 @@ function Footer() {
           <Link color="text.secondary" href="#">
             Contact
           </Link>
-        </Box>
+        </Box> */}
       </Box>
       <Box
         sx={{

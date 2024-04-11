@@ -8,9 +8,16 @@ import Footer from './Components/Footer';
 import Theme from './Theme';
 import { Box, CssBaseline, Divider, PaletteMode, ThemeProvider, createTheme } from '@mui/material';
 import { useState } from 'react';
-import Chatbot from 'react-chatbot-kit';
-// import { create } from '@mui/material/styles/createTransitions';
 
+// import { create } from '@mui/material/styles/createTransitions';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+const route = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>
+  },
+])
 
 interface ToggleCustomThemeProps {
   showCustomTheme: Boolean;
@@ -37,7 +44,7 @@ function App() {
         {/* <HomePage/> */}
         <Box sx={{ bgcolor: 'background.default', overflow: 'auto'}}>
           {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
-          <HomePage/>
+          <RouterProvider router={route}/>
           <Divider/>
           <Footer/>
 

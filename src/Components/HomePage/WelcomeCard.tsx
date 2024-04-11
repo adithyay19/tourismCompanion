@@ -1,5 +1,5 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import "E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg";
+// import "E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg";
 import axios from "axios";
 
 

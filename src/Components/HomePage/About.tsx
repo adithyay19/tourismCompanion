@@ -35,7 +35,7 @@ function About() {
                         About
                     </Typography>
                     <Typography variant="body1" sx={{ color: 'grey.400' }}>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis egestas integer. Ipsum nunc aliquet bibendum enim facilisis gravida. Sed arcu non odio euismod lacinia at. Nisl vel pretium lectus quam. Purus gravida quis blandit turpis. Nunc lobortis mattis aliquam faucibus purus. Bibendum at varius vel pharetra vel turpis. Id porta nibh venenatis cras sed. Volutpat diam ut venenatis tellus in. Gravida rutrum quisque non tellus orci. Urna nec tincidunt praesent semper feugiat nibh.
+                    Welcome to Travel Companion, your ultimate destination for seamless travel planning and unforgettable adventures! Our innovative tourism website is designed to make your trip planning experience effortless and enjoyable. With our intelligent itinerary creator, simply input your preferences and interests, and we'll craft a personalized itinerary tailored just for you. Our cutting-edge technology recommends the optimal route for your journey, ensuring you make the most of your time and experience all the highlights along the way. Need assistance or insider tips? Our friendly chatbot is here to help, providing real-time recommendations and answering any questions you may have. Once you've finalized your plans, our convenient booking platform allows you to easily reserve accommodations, activities, and transportation, all in one place.
                     </Typography>
                 </Box>
             </Container>

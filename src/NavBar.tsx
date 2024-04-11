@@ -263,7 +263,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import { PaletteMode } from '@mui/material';
 import { useState } from 'react';
 
@@ -327,12 +326,19 @@ interface NavBarProps {
   };
 
   return (
-    <AppBar position="fixed" color='transparent'>
-      <Container maxWidth="xl">
+    <AppBar
+      position='fixed'
+      sx={{
+        boxShadow: 0,
+        bgcolor: 'transparent',
+        backgroundImage: 'none',
+        mt: 2,
+      }}
+    >
+      <Container maxWidth='lg'> 
         <Toolbar 
           variant='regular'
           sx={{
-            top: 10,
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
