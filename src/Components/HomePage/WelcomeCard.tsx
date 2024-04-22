@@ -1,4 +1,4 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Link, Stack, Typography } from "@mui/material";
 // import "E:/Major Project/tourismCompanion/src/images/Cover_Img.jpg";
 import axios from "axios";
 
@@ -78,7 +78,7 @@ function WelcomeCard () {
                         >
                             Where your journey begins
                         </Typography>
-                        <Button variant="contained" color="secondary">
+                        <Button variant="contained" color="secondary" href="" target="_blank">
                             EXPLORE
                         </Button>
                     </Stack>

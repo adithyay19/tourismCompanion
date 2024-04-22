@@ -6,14 +6,15 @@ import WelcomeCard from "../Components/HomePage/WelcomeCard";
 
 function HomePage() {
     return(
-        <>
+        <div id="home-page">
             <WelcomeCard />
             <Divider/>
             <Destinations />
             <Divider/>
             <About />
-        </>
+        </div>
     );
 }
 
 export default HomePage;
+

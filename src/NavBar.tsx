@@ -265,11 +265,12 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { PaletteMode } from '@mui/material';
 import { useState } from 'react';
+import { Link } from '@mui/icons-material';
 
-const pages = [{name: 'HOME', id: 'home'}, 
+const pages = [{name: 'HOME', id: '/'}, 
   {name: 'ITINERARY', id: ''}, 
-  {name: 'BOOKING', id: ''}, 
-  {name: 'ABOUT', id: 'about'},
+  {name: 'BOOKING', id: '/booking-page'}, 
+  {name: 'ABOUT', id: '/#about'},
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -405,7 +406,10 @@ interface NavBarProps {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={() => scrollToSection(page.id)}>
+                <MenuItem 
+                  key={page.name} 
+      
+                >
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               ))}
@@ -445,8 +449,10 @@ interface NavBarProps {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'row' } }}>
             {pages.map((page) => (
               <Button
+                
                 key={page.name}
-                onClick={() => scrollToSection(page.id)}
+                href={page.id}
+                // onClick={() => scrollToSection(page.id)}
                 sx={{ my: 2, color: 'white', display: 'flex', letterSpacing: '0.15rem', padding: '1rem' }}
               >
                 {page.name}

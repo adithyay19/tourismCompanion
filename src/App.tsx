@@ -11,11 +11,17 @@ import { useState } from 'react';
 
 // import { create } from '@mui/material/styles/createTransitions';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import BookingPage from './Routes/BookingPage';
 
 const route = createBrowserRouter([
   {
     path: "/",
     element: <HomePage/>
+  },
+
+  {
+    path: "/booking-page",
+    element: <BookingPage/>
   },
 ])
 
@@ -40,17 +46,12 @@ function App() {
       <ThemeProvider theme={createTheme(Theme(mode))}>
         <CssBaseline />
         <NavBar />
-        {/* <Hero/> */}
-        {/* <HomePage/> */}
         <Box sx={{ bgcolor: 'background.default', overflow: 'auto'}}>
-          {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
           <RouterProvider router={route}/>
           <Divider/>
           <Footer/>
-
         </Box>
         <ChatBot/>
-
       </ThemeProvider>
     </>
   );
