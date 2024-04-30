@@ -8,9 +8,22 @@ import Footer from './Components/Footer';
 import Theme from './Theme';
 import { Box, CssBaseline, Divider, PaletteMode, ThemeProvider, createTheme } from '@mui/material';
 import { useState } from 'react';
-import Chatbot from 'react-chatbot-kit';
-// import { create } from '@mui/material/styles/createTransitions';
 
+// import { create } from '@mui/material/styles/createTransitions';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import BookingPage from './Routes/BookingPage';
+
+const route = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage/>
+  },
+
+  {
+    path: "/booking-page",
+    element: <BookingPage/>
+  },
+])
 
 interface ToggleCustomThemeProps {
   showCustomTheme: Boolean;
@@ -30,19 +43,15 @@ function App() {
 
   return (
     <>
-      <ThemeProvider theme={appTheme}>
+      <ThemeProvider theme={createTheme(Theme(mode))}>
         <CssBaseline />
-        {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
-        {/* <Hero/> */}
-        <Box sx={{ bgcolor: 'background.default'}}>
-          {/* <NavBar mode={mode} toggleColorMode={toggleColorMode}/> */}
-          <HomePage/>
+        <NavBar />
+        <Box sx={{ bgcolor: 'background.default', overflow: 'auto'}}>
+          <RouterProvider router={route}/>
           <Divider/>
           <Footer/>
-
         </Box>
         <ChatBot/>
-
       </ThemeProvider>
     </>
   );
