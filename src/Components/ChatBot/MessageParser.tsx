@@ -9,7 +9,7 @@ class MessageParser {
 
     parse(message : any) {
         const userMessage = message;
-        
+        console.log(`Text sent to : ${message}`);
         this.actionProvider.greetFunc(userMessage);
         
     }

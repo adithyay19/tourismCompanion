@@ -14,6 +14,8 @@ class ActionProvider {
     async greetFunc(userMessage: any) {
         try {
             const response = await axios.post('http://127.0.0.1:5000/api/chatbot', { message: userMessage });
+            console.log(`Status: ${response.status}`);
+            
             const botMessage = this.createChatBotMessage(response.data.response);
             this.updateChatbotState(botMessage);
         } catch (error) {
