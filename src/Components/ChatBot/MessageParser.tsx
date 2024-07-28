@@ -1,5 +1,4 @@
 
-import axios from "axios";
 
 class MessageParser {
     actionProvider : any;

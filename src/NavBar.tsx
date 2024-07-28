@@ -408,7 +408,7 @@ interface NavBarProps {
               {pages.map((page) => (
                 <MenuItem 
                   key={page.name} 
-      
+                  href={page.id}
                 >
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>

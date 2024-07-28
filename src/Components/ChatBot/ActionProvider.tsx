@@ -10,7 +10,7 @@ class ActionProvider {
         this.createChatBotMessage = createChatBotMessage;
         this.setState = setStateFunc;
     }
-
+  
     async greetFunc(userMessage: any) {
         try {
             const response = await axios.post('http://127.0.0.1:5000/api/chatbot', { message: userMessage });

@@ -1,7 +1,7 @@
 import { Box, Card, CardActionArea, CardContent, FormControl, FormLabel, Grid, OutlinedInput, RadioGroup, Select, Stack, TextField, Typography, styled } from "@mui/material";
 import AbcIcon from '@mui/icons-material/Abc';
 import { useState } from "react";
-import Hotels from "../Components/BookingPage/Hotels";
+// import Hotels from "../Components/BookingPage/Hotels";
 
 
 const FormGrid = styled(Grid)(() => ({
@@ -93,7 +93,7 @@ function BookingPage() {
                             </Card>
                         </RadioGroup>
                     </FormControl> 
-                    {bookingType === 'hotels' && <Hotels/>}
+                    {/* {bookingType === 'hotels' && <Hotels/>} */}
                     {/* <Hotels/> */}
                 </Stack>
             </Box>

@@ -68,8 +68,8 @@ function ChatBot() {
             }}
             
             >
-                <DialogTitle sx={{ m: 0, p: 1 }} id="customized-dialog-title">
-                    Kerala - ITC
+                <DialogTitle sx={{ m: 0, p: 1, paddingLeft: '10%' }} id="customized-dialog-title">
+                  ITC
                 </DialogTitle>
                 <IconButton
                 aria-label="close"
@@ -77,7 +77,7 @@ function ChatBot() {
                 sx={{
                     position: 'absolute',
                     right: 8,
-                    top: 8,
+                    top: 3,
                     color: (theme) => theme.palette.grey[500],
                 }}
                 >
